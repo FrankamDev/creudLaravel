@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('email');
             $table->text('content');
             $table->decimal('salary', 10, 2);
+            $table->string('phone');
             $table->timestamps();
         });
     }

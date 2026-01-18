@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\Employees;
 
+use App\Filament\Resources\Employees\Pages\ViewEmployee;
+
 use App\Filament\Resources\Employees\Pages\CreateEmployee;
 use App\Filament\Resources\Employees\Pages\EditEmployee;
 use App\Filament\Resources\Employees\Pages\ListEmployees;
@@ -18,7 +20,7 @@ class EmployeeResource extends Resource
 {
     protected static ?string $model = Employee::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::Users;
 
     public static function form(Schema $schema): Schema
     {
@@ -41,8 +43,9 @@ class EmployeeResource extends Resource
     {
         return [
             'index' => ListEmployees::route('/'),
-            'create' => CreateEmployee::route('/create'),
-            'edit' => EditEmployee::route('/{record}/edit'),
+            // 'create' => CreateEmployee::route('/create'),
+            // 'edit' => EditEmployee::route('/{record}/edit'),
+            // 'view' => ViewEmployee::route('/{record}'),
         ];
     }
 }
